@@ -10,8 +10,10 @@ export class ListComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get('data/data.json').subscribe((res) => {
-      console.log(res);
-    });
+    this.http
+      .get('https://jsonplaceholder.typicode.com/posts')
+      .subscribe((res) => {
+        console.log(res);
+      });
   }
 }
