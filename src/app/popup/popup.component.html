@@ -1,5 +1,12 @@
-<ul *ngFor="let d of data">
+<ul *ngFor="let d of titledata,let i=index">
   <li>
-    {{ d.title }}
+    <div>
+    <span>{{ d.title }} </span><span><a class="text" (click)="delete(i,d)">delete</a></span>
+    </div>
+    <div>{{ d.price }}</div> 
   </li>
 </ul>
+<div>
+<label>Total Price: {{sum}}</label>
+
+</div>

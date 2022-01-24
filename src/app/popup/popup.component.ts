@@ -8,10 +8,25 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./popup.component.css'],
 })
 export class PopupComponent implements OnInit {
+  titledata: any;
+  sum=0;
   constructor(
     public dialogRef: MatDialogRef<PopupComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-  ) {}
+  ) {
+    this.titledata = data.title;
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.titledata.forEach(element=>{
+      this.sum=this.sum + element.price;
+    })
+    console.log(this.titledata);
+    
+  }
+  delete(index,data){
+    this.sum=this.sum-data.price;
+    this.titledata.splice(index,1);
+    
+  }
 }

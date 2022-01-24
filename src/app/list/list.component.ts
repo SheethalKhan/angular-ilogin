@@ -12,33 +12,42 @@ import { PopupComponent } from '../popup/popup.component';
 })
 export class ListComponent implements OnInit {
   arrayList = [];
-cartList = [];
+  cartList = [];
   panelOpenState: boolean = false;
-  dialogRef:MatDialogRef<PopupComponent>
-  constructor(private http: HttpClient,private snackbar:MatSnackBar,private dialog:MatDialog) {}
+  dialogRef: MatDialogRef<PopupComponent>;
+  constructor(
+    private http: HttpClient,
+    private snackbar: MatSnackBar,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit() {
-    this.http
-      .get('https://jsonplaceholder.typicode.com/posts')
-      .subscribe((res: any) => {
+    this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe(
+      (res: any) => {
         this.arrayList = res;
         console.log(res);
-      });
+      },
+      (err) => {},
+      () => {
+        this.arrayList.forEach((element) => {
+          element.price = 100;
+        });
+      }
+    );
   }
-  openSnack(msg){
-    this.snackbar.open(msg,'purchased successfully',{
-      duration:3000,
-      panelClass:['style']
-    })
+  openSnack(msg) {
+    this.snackbar.open(msg, 'purchased successfully', {
+      duration: 3000,
+      panelClass: ['style'],
+    });
   }
-  cart(data){
+  cart(data) {
     this.cartList.push(data);
-
   }
-  popup(){
-this.dialogRef=this.dialog.open(PopupComponent,{
-  width:'200px',
-  data:{title:this.cartList}
-})
+  popup() {
+    this.dialogRef = this.dialog.open(PopupComponent, {
+      width: '60%',
+      data: { title: this.cartList },
+    });
   }
 }
