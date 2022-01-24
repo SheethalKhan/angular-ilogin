@@ -2,12 +2,12 @@
   <mat-accordion>
     <mat-expansion-panel *ngFor="let array of arrayList">
       <mat-expansion-panel-header>
-        <div *ngIf="array.stock" matTooltip="limited stock"></div>
+   
         {{ array.title }}
       </mat-expansion-panel-header>
       <label>id: {{ array.id }}</label>
       <div>
-        <button class="btn btn-warning">Add to cart</button>
+        <button class="btn btn-warning"  matTooltip="limit stock" matTooltipPosition="above">Add to cart</button>
         <button style="margin-left:20px" class="btn btn-success">
           Buy Now
         </button>

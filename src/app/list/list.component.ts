@@ -7,22 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.css'],
 })
 export class ListComponent implements OnInit {
-  arrayList=[];
-  panelOpenState:boolean=false;
+  arrayList = [];
+  panelOpenState: boolean = false;
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.http
       .get('https://jsonplaceholder.typicode.com/posts')
-      .subscribe((res:any) => {
-       this.arrayList=res;
+      .subscribe((res: any) => {
+        this.arrayList = res;
+        console.log(res);
       });
-      this.arrayList.forEach(element=>{
-        if(element.completed==false){
-          element.stock=true;
-        }else{
-          element.stock=false;
-        }
-      })
   }
 }
