@@ -13,10 +13,12 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { ListComponent } from './list/list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const route: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: OginComponent },
-  {path:'list',component:ListComponent}
+  { path: 'list', component: ListComponent },
 ];
 @NgModule({
   imports: [
@@ -25,9 +27,18 @@ const route: Routes = [
     RouterModule.forRoot(route),
     ReactiveFormsModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatExpansionModule,
+    BrowserAnimationsModule
   ],
-  declarations: [AppComponent, HelloComponent,OginComponent,FooterComponent,HeaderComponent,ListComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    OginComponent,
+    FooterComponent,
+    HeaderComponent,
+    ListComponent,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

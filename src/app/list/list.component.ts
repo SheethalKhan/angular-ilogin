@@ -7,13 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.css'],
 })
 export class ListComponent implements OnInit {
+  arrayList=[];
+  panelOpenState:boolean=false;
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.http
       .get('https://jsonplaceholder.typicode.com/posts')
-      .subscribe((res) => {
-        console.log(res);
+      .subscribe((res:any) => {
+       this.arrayList=res;
       });
   }
 }

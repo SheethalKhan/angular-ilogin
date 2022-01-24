@@ -1,5 +1,4 @@
-
-  <form
+<form
   [formGroup]="formdata"
   class="container"
   style="width:50%;position:relative;top:50px"
@@ -48,7 +47,20 @@
       placeholder="password"
       formControlName="password"
     />
+    <div
+      *ngIf="formdata.controls['password'].errors?.pattern"
+      class="alert-danger"
+    >
+      invalid password format
+    </div>
   </div>
   <br />
-  <button style="float:right" class="btn btn-primary" (click)="login()">Login</button>
+  <button
+    style="float:right"
+    [disabled]="!formdata.valid"
+    class="btn btn-primary"
+    (click)="login()"
+  >
+    Login
+  </button>
 </form>

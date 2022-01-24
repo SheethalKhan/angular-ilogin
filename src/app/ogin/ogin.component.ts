@@ -5,20 +5,27 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-ogin',
   templateUrl: './ogin.component.html',
-  styleUrls: ['./ogin.component.css']
+  styleUrls: ['./ogin.component.css'],
 })
 export class OginComponent implements OnInit {
-formdata:FormGroup;
-  constructor(private fb:FormBuilder,private route:Router) { }
+  formdata: FormGroup;
+  constructor(private fb: FormBuilder, private route: Router) {}
 
   ngOnInit() {
-    this.formdata=this.fb.group({
-      username:['',Validators.required],
-      password:['',[Validators.required,Validators.pattern('[0-9]'),Validators.minLength(5)]],
-      email:['',[Validators.required,Validators.email]]
-    })
+    this.formdata = this.fb.group({
+      username: ['', Validators.required],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern('^[0-9]+$'),
+          Validators.minLength(5),
+        ],
+      ],
+      email: ['', [Validators.required, Validators.email]],
+    });
   }
-  login(){
+  login() {
     this.route.navigate(['list']);
   }
 }

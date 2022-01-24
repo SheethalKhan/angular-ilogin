@@ -1,3 +1,14 @@
-<p>
-list works!
-</p>
+<div class="container scroll" >
+<mat-accordion >
+  <mat-expansion-panel *ngFor="let array of arrayList">
+    <mat-expansion-panel-header>
+      {{ array.title }}
+    </mat-expansion-panel-header>
+    <label>id: {{ array.id }}</label>
+    <div>
+      <button class="btn btn-warning">Add to cart</button>
+      <button style="margin-left:20px" class="btn btn-success">Buy Now</button>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+</div>
