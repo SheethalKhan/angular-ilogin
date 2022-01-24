@@ -17,6 +17,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+//import { MatDialog } from '@angular/material/dialog/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PopupComponent } from './popup/popup.component';
 const route: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: OginComponent },
@@ -33,7 +36,8 @@ const route: Routes = [
     MatExpansionModule,
     BrowserAnimationsModule,
     MatTooltipModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   declarations: [
     AppComponent,
@@ -42,6 +46,7 @@ const route: Routes = [
     FooterComponent,
     HeaderComponent,
     ListComponent,
+    PopupComponent
   ],
   bootstrap: [AppComponent],
 })

@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog/dialog-ref';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { PopupComponent } from '../popup/popup.component';
 
 @Component({
   selector: 'app-list',
@@ -11,7 +14,8 @@ export class ListComponent implements OnInit {
   arrayList = [];
 cartList = [];
   panelOpenState: boolean = false;
-  constructor(private http: HttpClient,private snackbar:MatSnackBar) {}
+  dialogRef:MatDialogRef<PopupComponent>
+  constructor(private http: HttpClient,private snackbar:MatSnackBar,private dialog:MatDialog) {}
 
   ngOnInit() {
     this.http
@@ -30,5 +34,11 @@ cartList = [];
   cart(data){
     this.cartList.push(data);
 
+  }
+  popup(){
+this.dialogRef=this.dialog.open(PopupComponent,{
+  width:'200px',
+  data:{title:this.cartList}
+})
   }
 }

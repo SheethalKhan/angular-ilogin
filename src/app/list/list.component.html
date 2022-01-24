@@ -1,15 +1,29 @@
-
+<mat-toolbar style="background-color:grey"
+  ><button style="position:absolute;right:10px"class="btn btn-primary" (click)="popup()">
+    Add to Cart({{ cartList.length }})
+  </button></mat-toolbar
+>
 <div class="container scroll">
   <mat-accordion>
     <mat-expansion-panel *ngFor="let array of arrayList">
       <mat-expansion-panel-header>
-   
         {{ array.title }}
       </mat-expansion-panel-header>
       <label>id: {{ array.id }}</label>
       <div>
-        <button class="btn btn-warning" (click)="cart(array)"  matTooltip="limit stock" matTooltipPosition="above">Add to cart</button>
-        <button style="margin-left:20px" class="btn btn-success" (click)="openSnack(array.title)">
+        <button
+          class="btn btn-warning"
+          (click)="cart(array)"
+          matTooltip="limit stock"
+          matTooltipPosition="above"
+        >
+          Add to cart
+        </button>
+        <button
+          style="margin-left:20px"
+          class="btn btn-success"
+          (click)="openSnack(array.title)"
+        >
           Buy Now
         </button>
       </div>
