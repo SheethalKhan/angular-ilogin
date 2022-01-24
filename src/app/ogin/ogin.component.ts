@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ogin',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class OginComponent implements OnInit {
 formdata:FormGroup;
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,private route:Router) { }
 
   ngOnInit() {
     this.formdata=this.fb.group({
@@ -17,5 +18,7 @@ formdata:FormGroup;
       email:['',[Validators.required,Validators.email]]
     })
   }
-
+  login(){
+    this.route.navigate(['list']);
+  }
 }

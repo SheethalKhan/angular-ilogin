@@ -11,9 +11,12 @@ import { OginComponent } from './ogin/ogin.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { ListComponent } from './list/list.component';
+import { HttpClientModule } from '@angular/common/http';
 const route: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: OginComponent },
+  {path:'list',component:ListComponent}
 ];
 @NgModule({
   imports: [
@@ -21,9 +24,10 @@ const route: Routes = [
     FormsModule,
     RouterModule.forRoot(route),
     ReactiveFormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
   ],
-  declarations: [AppComponent, HelloComponent,OginComponent,FooterComponent,HeaderComponent],
+  declarations: [AppComponent, HelloComponent,OginComponent,FooterComponent,HeaderComponent,ListComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
