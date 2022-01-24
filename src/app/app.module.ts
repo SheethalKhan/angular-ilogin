@@ -20,6 +20,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 //import { MatDialog } from '@angular/material/dialog/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PopupComponent } from './popup/popup.component';
+import { MatMenuModule } from '@angular/material/menu';
 const route: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: OginComponent },
@@ -37,7 +38,8 @@ const route: Routes = [
     BrowserAnimationsModule,
     MatTooltipModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
   ],
   declarations: [
     AppComponent,

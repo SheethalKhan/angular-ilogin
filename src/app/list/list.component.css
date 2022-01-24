@@ -2,6 +2,9 @@
   height: 80vh;
   overflow-y: scroll;
 }
-::ng-deep .style{
+::ng-deep .style {
   background-color: rgb(49, 12, 182);
+}
+.mat-toolbar {
+  justify-content: space-between;
 }
