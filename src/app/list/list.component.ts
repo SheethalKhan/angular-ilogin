@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-list',
@@ -21,7 +21,7 @@ export class ListComponent implements OnInit {
       });
   }
   openSnack(msg){
-    this.snackbar.openFromComponent(msg,{
+    this.snackbar.open(msg,'purchased successfully',{
       duration:3000
     })
   }
