@@ -9,6 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ListComponent implements OnInit {
   arrayList = [];
+cartList = [];
   panelOpenState: boolean = false;
   constructor(private http: HttpClient,private snackbar:MatSnackBar) {}
 
@@ -22,7 +23,12 @@ export class ListComponent implements OnInit {
   }
   openSnack(msg){
     this.snackbar.open(msg,'purchased successfully',{
-      duration:3000
+      duration:3000,
+      panelClass:['style']
     })
+  }
+  cart(data){
+    this.cartList.push(data);
+
   }
 }

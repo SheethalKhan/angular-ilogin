@@ -2,3 +2,6 @@
   height: 80vh;
   overflow-y: scroll;
 }
+::ng-deep .style{
+  background-color: rgb(49, 12, 182);
+}
