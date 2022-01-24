@@ -8,7 +8,7 @@
       <label>id: {{ array.id }}</label>
       <div>
         <button class="btn btn-warning"  matTooltip="limit stock" matTooltipPosition="above">Add to cart</button>
-        <button style="margin-left:20px" class="btn btn-success">
+        <button style="margin-left:20px" class="btn btn-success" (click)="openSnack(array.title)">
           Buy Now
         </button>
       </div>
