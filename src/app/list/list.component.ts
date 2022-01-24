@@ -17,5 +17,12 @@ export class ListComponent implements OnInit {
       .subscribe((res:any) => {
        this.arrayList=res;
       });
+      this.arrayList.forEach(element=>{
+        if(element.completed==false){
+          element.stock=true;
+        }else{
+          element.stock=false;
+        }
+      })
   }
 }
