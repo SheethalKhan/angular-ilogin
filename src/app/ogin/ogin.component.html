@@ -54,6 +54,13 @@
       invalid password format
     </div>
   </div>
+  <div class="form-group">
+    <label>ConfirmPassword </label>
+    <input type="text" name="confirmpassword" formControlName="confirmpassword" class="form-control">
+    <div *ngIf="formdata.controls['confirmpassword'].errors?.Validation" class="alert-danger">
+    invalid email format
+  </div>
+  </div>
   <br />
   <button
     style="float:right"
