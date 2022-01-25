@@ -22,6 +22,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { PopupComponent } from './popup/popup.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
+import { SearchPipe } from './search.pipe';
 const route: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: OginComponent },
@@ -50,7 +51,8 @@ const route: Routes = [
     FooterComponent,
     HeaderComponent,
     ListComponent,
-    PopupComponent
+    PopupComponent,
+    SearchPipe
   ],
   bootstrap: [AppComponent],
 })
