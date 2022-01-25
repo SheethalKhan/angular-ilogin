@@ -15,9 +15,9 @@ export class ListComponent implements OnInit {
   arrayList = [];
   cartList = [];
   panelOpenState: boolean = false;
-  selected:any;
-  msg:any=''
-  search:any='';
+  selected: any;
+  msg: any = '';
+  search: any = '';
   dialogRef: MatDialogRef<PopupComponent>;
   constructor(
     private http: HttpClient,
@@ -26,10 +26,10 @@ export class ListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.msg='';
-    this.selected='';
- window.innerHeight
- console.log("HGT",window.innerHeight)
+    this.msg = '';
+    this.selected = '';
+    window.innerHeight;
+    console.log('HGT', window.innerHeight);
     this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe(
       (res: any) => {
         this.arrayList = res;
@@ -60,5 +60,14 @@ export class ListComponent implements OnInit {
   }
   change(data) {
     alert(data);
+  }
+  searchmsg() {
+    if (this.msg == '') {
+      this.ngOnInit();
+    } else {
+      this.arrayList = this.arrayList.filter((res) => {
+        return res.title.match(this.msg);
+      });
+    }
   }
 }

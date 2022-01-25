@@ -26,9 +26,27 @@
     Add to Cart({{ cartList.length }})
   </button> -->
 </mat-toolbar>
-<input type="search" placeholder="search" [(ngModel)]="msg" class="form-control">
+<input type="search" placeholder="search" [(ngModel)]="msg" (ngModelChange)="searchmsg()" class="form-control">
 <div class="container scroll">
-  <mat-accordion>
+  <table class="table table-bordered">
+    
+    <thead>
+    <tr>
+      <th>id</th>
+      <th>Title</th>
+    </tr>
+    </thead>
+    
+    
+    <tbody >
+      <tr *ngFor="let array of arrayList ">
+      <td>{{array.id}}</td>
+        <td>{{array.title}}</td>
+      
+      </tr>
+    </tbody>
+  </table>
+  <!-- <mat-accordion>
     <mat-expansion-panel *ngFor="let array of arrayList ">
       <mat-expansion-panel-header>
         {{ array.title }}
@@ -52,5 +70,5 @@
         </button>
       </div>
     </mat-expansion-panel>
-  </mat-accordion>
+  </mat-accordion> -->
 </div>
