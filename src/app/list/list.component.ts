@@ -14,6 +14,7 @@ export class ListComponent implements OnInit {
   arrayList = [];
   cartList = [];
   panelOpenState: boolean = false;
+  selected:any;
   dialogRef: MatDialogRef<PopupComponent>;
   constructor(
     private http: HttpClient,
@@ -22,6 +23,7 @@ export class ListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.selected='';
     this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe(
       (res: any) => {
         this.arrayList = res;
@@ -49,5 +51,8 @@ export class ListComponent implements OnInit {
       width: '60%',
       data: { title: this.cartList },
     });
+  }
+  change(data) {
+    alert(data);
   }
 }

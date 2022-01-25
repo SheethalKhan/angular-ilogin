@@ -7,29 +7,25 @@
   <div>
     <mat-menu #menu2="matMenu">addfdfsffg</mat-menu>
   </div>
-  <div class="btn-group" mdbDropdown>
-  <button mdbDropdownToggle type="button" mdbBtn color="primary" class="dropdown-toggle waves-light"
-    mdbWavesEffect>
-    Basic dropdown
-  </button>
-
-  <div class="dropdown-menu dropdown-primary">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-    <div class="divider dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Separated link</a>
-  </div>
-</div>
+  <mat-label>Select an option</mat-label>
+  <mat-form-field appearance="fill">
+    <mat-label>Select an option</mat-label>
+    <mat-select [(ngModel)]="selected">
+      <mat-option>None</mat-option>
+      <mat-option value="option1">Option 1</mat-option>
+      <mat-option value="option2">Option 2</mat-option>
+      <mat-option value="option3">Option 3</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
   <!-- <button
     style="position:absolute;right:10px"
     class="btn btn-primary"
     (click)="popup()"
   >
     Add to Cart({{ cartList.length }})
-  </button>-->
-</mat-toolbar 
->
+  </button> -->
+</mat-toolbar>
 <div class="container scroll">
   <mat-accordion>
     <mat-expansion-panel *ngFor="let array of arrayList">
