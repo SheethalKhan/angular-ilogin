@@ -26,10 +26,10 @@
     Add to Cart({{ cartList.length }})
   </button> -->
 </mat-toolbar>
-<input type="search" placeholder="search" [(ngModel)]="msg">
+<input type="search" placeholder="search" [(ngModel)]="msg" class="form-control">
 <div class="container scroll">
   <mat-accordion>
-    <mat-expansion-panel *ngFor="let array of arrayList | search:msg">
+    <mat-expansion-panel *ngFor="let array of arrayList ">
       <mat-expansion-panel-header>
         {{ array.title }}
       </mat-expansion-panel-header>

@@ -1,6 +1,9 @@
 .scroll {
-  height: 80vh;
+  height: 60vh;
   overflow-y: scroll;
+  position:relative;
+  bottom:20%;
+
 }
 ::ng-deep .style {
   background-color: rgb(49, 12, 182);

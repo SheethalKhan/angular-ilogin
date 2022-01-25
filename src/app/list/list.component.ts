@@ -16,50 +16,32 @@ export class ListComponent implements OnInit {
   cartList = [];
   panelOpenState: boolean = false;
   selected:any;
-  msg:any;
+  msg:any=''
+  search:any='';
   dialogRef: MatDialogRef<PopupComponent>;
   constructor(
     private http: HttpClient,
     private snackbar: MatSnackBar,
-    private dialog: MatDialog,private search:SearchPipe
+    private dialog: MatDialog
   ) {}
 
   ngOnInit() {
     this.msg='';
     this.selected='';
-    this.arrayList=[{
-      title:"fvvddddfffff",
-      price:500,
-      id:5
-    },{
-      title:"fvvddddfffff",
-      price:500,
-      id:5
-    },{
-      title:"fvvddddfffff",
-      price:500,
-      id:5
-    },{
-      title:"fvvddddfffff",
-      price:500,
-      id:5
-    },{
-      title:"fvvddddfffff",
-      price:500,
-      id:5
-    }]
-    // this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe(
-    //   (res: any) => {
-    //     this.arrayList = res;
-    //     console.log(res);
-    //   },
-    //   (err) => {},
-    //   () => {
-    //     this.arrayList.forEach((element) => {
-    //       element.price = 100;
-    //     });
-    //   }
-    // );
+ window.innerHeight
+ console.log("HGT",window.innerHeight)
+    this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe(
+      (res: any) => {
+        this.arrayList = res;
+        console.log(res);
+      },
+      (err) => {},
+      () => {
+        this.arrayList.forEach((element) => {
+          element.price = 100;
+        });
+      }
+    );
   }
   openSnack(msg) {
     this.snackbar.open(msg, 'purchased successfully', {

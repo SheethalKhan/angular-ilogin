@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "name": "sheethal",
+      "age": 52,
+      "number": "9675968"
+    },
+    {
+      "name": "erfan",
+      "age": 52,
+      "number": "9675968"
+    },
+    {
+      "name": "afnan",
+      "age": 52,
+      "number": "9675968"
+    },
+    {
+      "name": "aheea",
+      "age": 52,
+      "number": "9675968"
+    },
+    {
+      "name": "afsal",
+      "age": 52,
+      "number": "9675968"
+    }
+  ]
+}
